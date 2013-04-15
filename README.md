@@ -15,16 +15,23 @@ In your web page:
 <script src="dist/adaptText.min.js"></script>
 <script>
 jQuery(function($) {
-  $.awesome(); // "awesome"
+  $('.responsive').adaptText();
 });
 </script>
 ```
 
-## Documentation
-_(Coming soon)_
-
 ## Examples
-_(Coming soon)_
+
+```html
+<p class="responsive">Hello world</p>
+<p class="responsive" data-compression="10" data-max="100" data-min="10">Hello world</p>
+```
 
 ## Release History
-_(Nothing yet)_
+* `v 1.0` - Initial Release
+
+## Inspired
+
+- [fittext](http://fittextjs.com) by Paravel
+- [SlabText](http://www.frequency-decoder.com/demo/slabText/) by Brian McAllister
+- [responsiveText](http://groundwork.sidereel.com/?url=responsiveText-js) by Gary Hepting
