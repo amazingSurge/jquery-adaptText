@@ -1,10 +1,10 @@
 {
-  "name": "jquery.adaptText",
-  "title": "jquery.Adapttext",
+  "name": "jquery-adapttext",
+  "title": "jQuery AdaptText",
   "description": "A jQuery plugin that help rescale text depending on it's container width.",
-  "version": "1.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/amazingSurge/jquery-adaptText",
-  "author": {
+   "author": {
     "name": "amazingSurge",
     "email": "amazingSurge@yahoo.com",
     "url": "amazingSurge.com"
@@ -13,22 +13,27 @@
     "type": "git",
     "url": "git@github.com:amazingSurge/jquery-adaptText.git"
   },
-  "bugs": "https://github.com/amazingSurge/jquery-adaptText/issues",
+  "bugs": {
+    "url": "https://github.com/amazingSurge/jquery-adaptText/issues"
+  },
   "licenses": [
     {
       "type": "MIT",
       "url": "https://github.com/amazingSurge/jquery-adaptText/blob/master/LICENSE-MIT"
     }
   ],
-  "engines": {
-    "node": ">= 0.8.0"
+  "dependencies": {
+    "jquery": ">=1.8.3"
   },
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.1.1",
-    "grunt-contrib-concat": "~0.1.2",
-    "grunt-contrib-uglify": "~0.1.1",
-    "grunt-contrib-watch": "~0.2.0",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-watch": "~0.4.0",
     "grunt-contrib-clean": "~0.4.0",
+    "grunt-jsbeautifier": "~0.1.10",
+    "grunt-text-replace": "~0.3.6",
     "grunt": "~0.4.1"
-  }
+  },
+  "keywords": []
 }

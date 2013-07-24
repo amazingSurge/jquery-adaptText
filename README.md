@@ -5,14 +5,14 @@ A jQuery plugin that help rescale text depending on it's container width.
 ## Getting Started
 Download the [production version][min] or the [development version][max].
 
-[min]: https://raw.github.com/amazingSurge/jquery-adaptText/master/dist/adaptText.min.js
-[max]: https://raw.github.com/amazingSurge/jquery-adaptText/master/dist/adaptText.js
+[min]: https://raw.github.com/amazingSurge/jquery-adaptText/master/dist/jquery-adapttext.min.js
+[max]: https://raw.github.com/amazingSurge/jquery-adaptText/master/dist/jquery-adapttext.js
 
 In your web page:
 
 ```html
 <script src="jquery.js"></script>
-<script src="dist/adaptText.min.js"></script>
+<script src="dist/jquery-adapttext.min.js"></script>
 <script>
 jQuery(function($) {
   $('.responsive').adaptText();
@@ -28,7 +28,7 @@ jQuery(function($) {
 ```
 
 ## Release History
-* `v 1.0` - Initial Release
+* `v 1.0.0` - Initial Release
 
 ## Inspired
 
