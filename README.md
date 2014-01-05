@@ -25,9 +25,11 @@ jQuery(function($) {
 ```html
 <p class="responsive">Hello world</p>
 <p class="responsive" data-compression="10" data-max="100" data-min="10">Hello world</p>
+<h1 class="responsive" data-scrollable="true">Long Text With Scrollable Support</h1>
 ```
 
 ## Release History
+* `v 1.1.0` - Add Scrollable Support
 * `v 1.0.0` - Initial Release
 
 ## Inspired
@@ -35,3 +37,4 @@ jQuery(function($) {
 - [fittext](http://fittextjs.com) by Paravel
 - [SlabText](http://www.frequency-decoder.com/demo/slabText/) by Brian McAllister
 - [responsiveText](http://groundwork.sidereel.com/?url=responsiveText-js) by Gary Hepting
+- [jquery-responsive-text](http://github.com/ghepting/jquery-responsive-text) by ghepting
