@@ -1,6 +1,11 @@
-/*! jquery.Adapttext - v1.0.1 - 2014-05-15
-* https://github.com/amazingSurge/jquery-adaptText
-* Copyright (c) 2014 amazingSurge; Licensed MIT */
+/*
+ * adaptText
+ * https://github.com/amazingSurge/jquery-adaptText
+ *
+ * Copyright (c) 2013 amazingSurge
+ * Licensed under the MIT license.
+ */
+
 (function(window, document, $, undefined) {
     "use strict";
 
@@ -13,35 +18,65 @@
         this.element = element;
         this.$element = $(element);
 
-        var metas = {};
-        if (this.$element.data('max')) {
-            metas.maxFontSize = this.$element.data('max');
-        }
-        if (this.$element.data('min')) {
-            metas.minFontSize = this.$element.data('min');
-        }
-        if (this.$element.data('compression')) {
-            metas.compression = this.$element.data('compression');
-        }
-
         // options
-        this.options = $.extend(true, {}, AdaptText.defaults, options, metas);
+        this.options = $.extend(true, {}, AdaptText.defaults, options, this.$element.data());
 
         this.width = this.$element.width();
 
+        var self = this;
+        $.extend(self, {
+            init: function() {
+                self.resize();
+
+                if (self.options.scrollable) {
+                    self.scrollOnHover();
+                }
+            },
+            scrollOnHover: function() {
+                self.$element.css({
+                    'overflow': 'hidden',
+                    'text-overflow': 'ellipsis',
+                    'white-space': 'nowrap'
+                });
+                self.$element.hover(function() {
+                    var distance = self.element.scrollWidth - self.$element.width();
+
+                    if (distance > 0) {
+                        var scrollSpeed = Math.sqrt(distance / self.width) * self.options.scrollSpeed;
+
+                        self.$element.css('cursor', 'e-resize');
+                        return self.$element.stop().animate({
+                            "text-indent": -distance
+                        }, scrollSpeed, function() {
+                            return self.$element.css('cursor', 'text');
+                        });
+                    }
+                }, function() {
+                    return self.$element.stop().animate({
+                        "text-indent": 0
+                    }, self.options.scrollResetSpeed);
+                });
+            }
+        });
+
+        this.init();
         instances.push(this);
     };
 
     // Default options for the plugin as a simple object
     AdaptText.defaults = {
         compression: 10,
-        maxFontSize: Number.POSITIVE_INFINITY,
-        minFontSize: Number.NEGATIVE_INFINITY,
+        max: Number.POSITIVE_INFINITY,
+        min: Number.NEGATIVE_INFINITY,
+        scrollable: false,
+        scrollSpeed: 1000,
+        scrollResetSpeed: 300,
         onResizeEvent: true
     };
 
     AdaptText.prototype = {
         constructor: AdaptText,
+
         resize: function() {
             this.width = this.$element.width();
             if (this.width === 0) {
@@ -49,17 +84,16 @@
             }
 
             this.$element.css('font-size', Math.floor(Math.max(
-                Math.min(this.width / (this.options.compression), parseFloat(this.options.maxFontSize)),
-                parseFloat(this.options.minFontSize)
+                Math.min(this.width / (this.options.compression), parseFloat(this.options.max)),
+                parseFloat(this.options.min)
             )));
-        }
+        },
     };
 
     AdaptText.resize = function(force) {
         if (!force && $(window).width() === viewportWidth) {
             return;
         }
-
         viewportWidth = $(window).width();
 
         $.each(instances, function() {

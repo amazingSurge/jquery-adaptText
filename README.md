@@ -5,14 +5,14 @@ A jQuery plugin that help rescale text depending on it's container width.
 ## Getting Started
 Download the [production version][min] or the [development version][max].
 
-[min]: https://raw.github.com/amazingSurge/jquery-adaptText/master/dist/adaptText.min.js
-[max]: https://raw.github.com/amazingSurge/jquery-adaptText/master/dist/adaptText.js
+[min]: https://raw.github.com/amazingSurge/jquery-adaptText/master/dist/jquery-adapttext.min.js
+[max]: https://raw.github.com/amazingSurge/jquery-adaptText/master/dist/jquery-adapttext.js
 
 In your web page:
 
 ```html
 <script src="jquery.js"></script>
-<script src="dist/adaptText.min.js"></script>
+<script src="dist/jquery-adapttext.min.js"></script>
 <script>
 jQuery(function($) {
   $('.responsive').adaptText();
@@ -25,13 +25,17 @@ jQuery(function($) {
 ```html
 <p class="responsive">Hello world</p>
 <p class="responsive" data-compression="10" data-max="100" data-min="10">Hello world</p>
+<h1 class="responsive" data-scrollable="true">Long Text With Scrollable Support</h1>
 ```
 
 ## Release History
-* `v 1.0` - Initial Release
+* `v 1.2.0` - Improve resize function
+* `v 1.1.0` - Add Scrollable Support
+* `v 1.0.0` - Initial Release
 
 ## Inspired
 
 - [fittext](http://fittextjs.com) by Paravel
 - [SlabText](http://www.frequency-decoder.com/demo/slabText/) by Brian McAllister
 - [responsiveText](http://groundwork.sidereel.com/?url=responsiveText-js) by Gary Hepting
+- [jquery-responsive-text](http://github.com/ghepting/jquery-responsive-text) by ghepting
