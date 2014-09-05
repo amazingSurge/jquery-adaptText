@@ -2,10 +2,9 @@
  * adaptText
  * https://github.com/amazingSurge/jquery-adaptText
  *
- * Copyright (c) 2013 amazingSurge
+ * Copyright (c) 2014 amazingSurge
  * Licensed under the MIT license.
  */
-
 (function(window, document, $, undefined) {
     "use strict";
 
@@ -14,7 +13,6 @@
 
     // Constructor
     var AdaptText = $.AdaptText = function(element, options) {
-        // Attach element to the 'this' keyword
         this.element = element;
         this.$element = $(element);
 
@@ -107,7 +105,7 @@
     $.fn.adaptText = function(options) {
         if (typeof options === 'string') {
             var method = options;
-            var method_arguments = arguments.length > 1 ? Array.prototype.slice.call(arguments, 1) : undefined;
+            var method_arguments = arguments.length > 1 ? Array.prototype.slice.call(arguments, 1) : [];
 
             return this.each(function() {
                 var api = $.data(this, 'adaptText');
@@ -124,9 +122,40 @@
         }
     };
 
+    var throttle = function(func, wait) {
+        var _now = Date.now || function() {
+            return new Date().getTime();
+        };
+        var context, args, result;
+        var timeout = null;
+        var previous = 0;
+        var later = function() {
+            previous = _now();
+            timeout = null;
+            result = func.apply(context, args);
+            context = args = null;
+        };
+        return function() {
+            var now = _now();
+            var remaining = wait - (now - previous);
+            context = this;
+            args = arguments;
+            if (remaining <= 0) {
+                clearTimeout(timeout);
+                timeout = null;
+                previous = now;
+                result = func.apply(context, args);
+                context = args = null;
+            } else if (!timeout) {
+                timeout = setTimeout(later, remaining);
+            }
+            return result;
+        };
+    };
+
     if (window.addEventListener) {
-        window.addEventListener("resize", AdaptText.resize, false);
+        window.addEventListener("resize", throttle(AdaptText.resize, 200), false);
     } else if (window.attachEvent) {
-        window.attachEvent("onresize", AdaptText.resize);
+        window.attachEvent("onresize", throttle(AdaptText.resize, 200));
     }
 }(window, document, jQuery));

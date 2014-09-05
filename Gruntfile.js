@@ -116,11 +116,10 @@ module.exports = function(grunt) {
     });
 
     // Default task.
+    grunt.registerTask('default', ['js', 'dist']);
+
     grunt.registerTask('js', ['jsbeautifier', 'jshint']);
-
-    grunt.registerTask('dist', ['concat', 'uglify']);
-
-    grunt.registerTask('default', ['clean', 'js', 'dist']);
+    grunt.registerTask('dist', ['clean', 'concat', 'uglify']);
 
     grunt.registerTask('version', [
         'replace:bower',

@@ -2,7 +2,7 @@
   "name": "jquery-adapttext",
   "title": "jQuery AdaptText",
   "description": "A jQuery plugin that help rescale text depending on it's container width.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "homepage": "https://github.com/amazingSurge/jquery-adaptText",
   "author": {
     "name": "amazingSurge",
@@ -34,7 +34,7 @@
     "grunt-contrib-clean": "*",
     "grunt-text-replace": "*",
     "grunt-jsbeautifier": "*",
-    "grunt": "~0.4.5",
-    "load-grunt-tasks": "~0.4.0"
+    "load-grunt-tasks": "*",
+    "grunt": "~0.4.5"
   }
 }
