@@ -1,4 +1,4 @@
-/*! jQuery AdaptText - v1.2.1 - 2014-09-05
+/*! jQuery AdaptText - v1.2.1 - 2014-09-06
 * https://github.com/amazingSurge/jquery-adaptText
 * Copyright (c) 2014 amazingSurge; Licensed MIT */
 (function(window, document, $, undefined) {
@@ -101,7 +101,7 @@
     $.fn.adaptText = function(options) {
         if (typeof options === 'string') {
             var method = options;
-            var method_arguments = arguments.length > 1 ? Array.prototype.slice.call(arguments, 1) : [];
+            var method_arguments = Array.prototype.slice.call(arguments, 1);
 
             return this.each(function() {
                 var api = $.data(this, 'adaptText');
