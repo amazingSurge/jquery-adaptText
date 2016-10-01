@@ -1,5 +1,5 @@
 /**
-* jQuery AdaptText v1.3.0
+* jQuery AdaptText v1.3.1
 * https://github.com/amazingSurge/jquery-adaptText
 *
 * Copyright (c) amazingSurge
@@ -139,7 +139,7 @@ class adaptText {
       this.isDisabled = false;
     }
 
-    this.trigger('enable');
+    this._trigger('enable');
   }
 
   disable() {
@@ -147,7 +147,7 @@ class adaptText {
       this.isDisabled = true;
     }
 
-    this.trigger('disable');
+    this._trigger('disable');
   }
 
   _trigger(eventType, ...params) {
@@ -192,7 +192,7 @@ if (window.addEventListener) {
 }
 
 var info = {
-  version:'1.3.0'
+  version:'1.3.1'
 };
 
 const NAMESPACE = 'adaptText';

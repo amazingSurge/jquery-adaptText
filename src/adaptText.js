@@ -82,7 +82,7 @@ class adaptText {
       this.isDisabled = false;
     }
 
-    this.trigger('enable');
+    this._trigger('enable');
   }
 
   disable() {
@@ -90,7 +90,7 @@ class adaptText {
       this.isDisabled = true;
     }
 
-    this.trigger('disable');
+    this._trigger('disable');
   }
 
   _trigger(eventType, ...params) {
