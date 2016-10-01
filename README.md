@@ -16,6 +16,7 @@
 - [Contributing](#contributing)
 - [Development](#development)
 - [Changelog](#changelog)
+- [Inspired](#inspired)
 - [Copyright and license](#copyright-and-license)
 
 ## Main files
@@ -23,8 +24,7 @@
 dist/
 ├── jquery-adaptText.js
 ├── jquery-adaptText.es.js
-├── jquery-adaptText.min.js
-└── css/
+└── jquery-adaptText.min.js
 ```
 
 ## Quick start
