@@ -44,6 +44,11 @@ bower install jquery-adaptText --save
 npm install jquery-adaptText --save
 ```
 
+#### Install From Yarn
+```sh
+yarn add jquery-adaptText
+```
+
 #### Build From Source
 If you want build from source:
 

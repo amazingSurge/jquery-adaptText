@@ -1,5 +1,5 @@
 /**
-* jQuery AdaptText v1.3.1
+* jQuery AdaptText v1.3.2
 * https://github.com/amazingSurge/jquery-adaptText
 *
 * Copyright (c) amazingSurge
@@ -252,13 +252,11 @@
       }, {
         key: '_trigger',
         value: function _trigger(eventType) {
-          var _ref;
-
           for (var _len2 = arguments.length, params = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
             params[_key2 - 1] = arguments[_key2];
           }
 
-          var data = (_ref = [this]).concat.apply(_ref, params);
+          var data = [this].concat(params);
 
           // event
           this.$element.trigger(NAMESPACE$1 + '::' + eventType, data);
@@ -273,9 +271,7 @@
           var onFunction = 'on' + eventType;
 
           if (typeof this.options[onFunction] === 'function') {
-            var _options$onFunction;
-
-            (_options$onFunction = this.options[onFunction]).apply.apply(_options$onFunction, [this].concat(params));
+            this.options[onFunction].apply(this, params);
           }
         }
       }], [{
@@ -313,7 +309,7 @@
     }
 
     var info = {
-      version: '1.3.1'
+      version: '1.3.2'
     };
 
     var NAMESPACE = 'adaptText';
