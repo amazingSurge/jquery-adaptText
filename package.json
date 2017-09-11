@@ -2,7 +2,7 @@
   "name": "jquery-adaptText",
   "title": "jQuery AdaptText",
   "description": "A jQuery plugin that help rescale text depending on it's container width.",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "homepage": "https://github.com/amazingSurge/jquery-adaptText",
   "author": {
     "name": "amazingSurge",
@@ -29,6 +29,7 @@
   ],
   "license": "LGPL-3.0",
   "main": "dist/jquery-adaptText.js",
+  "module": "dist/jquery-adaptText.es.js",
   "files": [
     "dist",
     "src"
@@ -43,7 +44,7 @@
     "test": "gulp test"
   },
   "devDependencies": {
-    "argv": "*",
+    "yargs": "*",
     "assets-manager": "*",
     "babel-core": "*",
     "babel-eslint": "*",
@@ -55,7 +56,8 @@
     "browser-sync": "*",
     "chai": "*",
     "del": "*",
-    "esformatter": "*",
+    "prettier": "*",
+    "gulp-nf-prettier": "*",
     "graceful-fs": "*",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "*",
@@ -67,7 +69,6 @@
     "gulp-header": "*",
     "gulp-iconfont-css": "*",
     "gulp-if": "*",
-    "gulp-jshint": "*",
     "gulp-notify": "*",
     "gulp-plumber": "*",
     "gulp-rename": "*",
@@ -79,7 +80,7 @@
     "gulp-util": "*",
     "gulp-zip": "*",
     "inquirer": "*",
-    "jshint": "*",
+    "semver": "*",
     "karma": "*",
     "karma-babel-preprocessor": "*",
     "karma-chrome-launcher": "*",
@@ -95,7 +96,7 @@
     "mkdirp": "*",
     "mocha": "*",
     "node-notifier": "*",
-    "normalize.css": "^4.2.0",
+    "normalize.css": "^7.0.0",
     "path-exists": "*",
     "phantomjs-prebuilt": "*",
     "release-it": "*",
