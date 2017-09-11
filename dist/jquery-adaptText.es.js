@@ -1,14 +1,11 @@
 /**
-* jQuery AdaptText v1.3.3
+* jQuery AdaptText v1.3.4
 * https://github.com/amazingSurge/jquery-adaptText
 *
 * Copyright (c) amazingSurge
 * Released under the LGPL-3.0 license
 */
-(function ($) {
-'use strict';
-
-$ = $ && $.hasOwnProperty('default') ? $['default'] : $;
+import $ from 'jquery';
 
 var DEFAULTS = {
   compression: 10,
@@ -195,7 +192,7 @@ if (window.addEventListener) {
 }
 
 var info = {
-  version:'1.3.3'
+  version:'1.3.4'
 };
 
 const NAMESPACE = 'adaptText';
@@ -238,5 +235,3 @@ $.adaptText = $.extend({
     return jQueryAdaptText;
   }
 }, info);
-
-}(jQuery));
